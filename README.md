@@ -47,12 +47,12 @@ funkciók, user story-k, elfogadási kritériumok. A PACE ezt a réteget veszi �
 
 **Egy generált user story, elfogadási kritériummal:**
 
-![Példa user story](showcase-assets/pelda-user-story.png)
+![Példa user story](screenshots/pelda-user-story.png)
 
 **A backlog fa-nézete — hány feladat tartozik egy nagyobb egységhez, és mi
 kész belőle:**
 
-![Példa backlog fa](showcase-assets/pelda-backlog-fa.png)
+![Példa backlog fa](screenshots/pelda-backlog-fa.png)
 
 ## 📄 Bizonyíték — élő próba
 
