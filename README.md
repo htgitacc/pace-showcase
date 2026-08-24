@@ -67,7 +67,7 @@ helyszíni, rögtönzött próbával (egy váratlan, új igény szétvágásáva
 - AI-ügynök (LLM) végzi a tényleges lebontást és a minőségellenőrzést
 - Strukturált, ellenőrzött adatmodell minden artefaktumhoz
 - GitHub-alapú munkafolyamat és verziókövetés
-- A fejlesztés AI-asszisztált módszerrel ("vibe coding") készült
+- A fejlesztés AI-asszisztált módszerrel (vibe coding) készült
 
 ## 📬 Több részlet kérésre
 
