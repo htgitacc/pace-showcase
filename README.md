@@ -4,12 +4,13 @@
 elfogadási kritérium, teszt, mérés —, és a döntési pontokon megáll az
 emberi jóváhagyásért.*
 
-> **Ez egy bemutató repó.** A PACE forráskódja és a példaprojekt külön, privát
-> repókban él; itt a működését mutatom be a felületéről készült képekkel.
+> **Ez egy bemutató repó.** A PACE forráskódja és a példaprojektek külön,
+> privát repókban élnek; itt a működését mutatom be a felületéről készült
+> képekkel.
 >
-> **Fejlesztés alatt.** A képek és a számok 2026-10-20-i állapotot mutatnak.
-> A keret folyamatosan változik, és a lenti példaprojekt is a keret hibáinak
-> feltárására készült.
+> **Fejlesztés alatt.** A képek és a voice számai 2026-10-20-i, a kiadas
+> számai 2026-10-30-i állapotot mutatnak. A keret folyamatosan változik, és a
+> lenti két példaprojekt is a keret hibáinak feltárására készült.
 
 ---
 
@@ -120,10 +121,29 @@ visszaküldte, az új futás egy kör után ment át. A teljes esettanulmány a
 számokkal, a tanulságokkal és a korlátokkal:
 [esettanulmany-voice.md](esettanulmany-voice.md).
 
+## Második példaprojekt: kiadas
+
+A *kiadas* egy helyben futó kiadásnapló egyszemélyes háztartásnak,
+kategória-javaslattal: kulccsal egy nyelvi modell (DeepSeek), kulcs nélkül
+egy kulcsszó-szabály javasol. Ez az első projekt, amelyet a keret a saját
+felületéről indított: a brieftől a működő POC-ig és egy valódi, egyestés
+próbáig ugyanaz az ügynök vitte, a kódot egy külön építő ügynök írta.
+
+2026-10-30-án mérve: mind a hat kapu jóváhagyással zárult (a G4 és a G5
+fenntartással), egyik sem lépte túl a két bírálati kört; a próbán a négy
+hipotézis igazolódott, kettő kimondott mérési korláttal. A nyelvi modell
+teljes költsége a leolvasás szerint 0,01 USD volt a 0,10 USD-s keretből. A
+kör legfontosabb tanulsága, hogy a hosszú, körülíró mintán mért pontosság a
+valódi, rövid (többnyire egyszavas) beírásra optimista — ezt csak egy valódi bemeneten futó
+kontroll mutatta meg. A teljes esettanulmány:
+[esettanulmany-kiadas.md](esettanulmany-kiadas.md).
+
 ## Amit ez a bemutató nem állít
 
 - A voice szimulált környezetben futott: valódi tesztcsoport és hónapokig
   tartó használat nélkül a termék-hipotézisei nem igazoltak.
+- A kiadas próbáját egy ember tartotta, tíz tétellel, egy estén: a
+  hipotézisei egy hónapnyi valódi használaton nem mértek.
 - A számok egy adott napra vonatkoznak, és a keret fejlesztése közben
   változnak.
 - A bírálati megállapítások aránya ma alsó korlát: a mérés a korábbi kapuk
