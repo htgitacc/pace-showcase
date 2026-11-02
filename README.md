@@ -8,9 +8,13 @@ emberi jóváhagyásért.*
 > privát repókban élnek; itt a működését mutatom be a felületéről készült
 > képekkel.
 >
-> **Fejlesztés alatt.** A képek és a voice számai 2026-10-20-i, a kiadas
-> számai 2026-10-30-i állapotot mutatnak. A keret folyamatosan változik, és a
-> lenti két példaprojekt is a keret hibáinak feltárására készült.
+> **Fejlesztés alatt.** A képek a kiadas projekten mutatják a konzol
+> 2026-11-02-i állapotát (az 5. és a 6. kép a G4 kapu régebbi, 2026-10-29-i
+> állapotát, a mai konzollal megnyitva, mert a kiadas azóta minden kaput
+> lezárt); a voice két képe 2026-10-20-i. A voice számai 2026-10-20-i, a
+> kiadas számai 2026-10-30-i állapotot mutatnak (az SC4-költség
+> 2026-11-02-án javítva). A keret folyamatosan változik, és a lenti két
+> példaprojekt is a keret hibáinak feltárására készült.
 
 ---
 
@@ -42,15 +46,17 @@ kérdésre keres emberi választ.
 ## Végig a felületen
 
 A PACE-nek saját, böngészőben futó kezelőfelülete van (a „konzol”). A képek
-a példaprojekt, a *voice* valódi adataiból készültek.
+a második példaprojekt, a *kiadas* valódi adataiból készültek: ez az első
+projekt, amelyet a keret a saját felületéről indított, és amelynek a
+brieftől a próbáig minden lépése itt követhető.
 
 ### 1. Indítás: egy brief, amely megmondja, mi hiányzik
 
 Az új projekt egy űrlappal indul. Négy mező kötelező — a probléma, a cél,
 legalább egy célfelhasználó és legalább egy siker-kritérium —, minden más
 puha: ami hiányzik, azt a rendszer nyitott kérdésként vagy jelölt feltevésként
-viszi tovább, nem találja ki. A formát váró mezők mellett minta áll, és a lap
-menet közben jelzi, mi hiányzik még.
+viszi tovább, nem találja ki. A formát váró mezők mellett minta áll (a kép az
+űrlap tetejét mutatja), és a lap menet közben jelzi, mi hiányzik még.
 
 ![Új projekt indítása: az űrlap mintákkal és a kötelező mezők jelölésével](kepek/02-uj-projekt.png)
 
@@ -61,50 +67,65 @@ de nem állít meg, és ami kitöltött, de gyenge.
 
 ![A brief egészségi lapja három szinten](kepek/03-brief-egeszseg.png)
 
-### 3. A kapuk állása
+### 3. A brief AI-átnézése
+
+Ha a brief gyenge, az AI tartalmi javaslatot tesz: kulccsal a konzol egy
+nyelvi modellt (DeepSeek) hív, kulcs nélkül a Claude Code végzi ugyanezt.
+**A javaslat sosem íródik magától a briefbe**: minden javaslatról ember dönt,
+az elfogadott érték „következtetett” eredet-jelölést kap, az elvetett
+indoklással a naplóban marad, és ami nem fogadható el, mellette nem gomb áll,
+hanem az ok. A kiadas briefjére 17 javaslat született: 5-öt fogadtunk el, 12-t
+indokkal elvetettünk (a kép az első ötöt mutatja).
+
+![A brief AI-átnézése: javaslatok, indoklással elvetett és elfogadott döntések](kepek/03b-ai-atnezes.png)
+
+### 4. A kapuk állása
 
 Egy kapu állapotát kizárólag a kapu-napló emberi döntése adja. A felületről a
 jóváhagyás szándékosan nem futtatható: a napló írása a parancssoré, a
 döntéssel és a bírálat mellékelt jelentésével együtt. A fenntartások — a
-jóváhagyás feltételeként nyitva maradó feladatok — kapunként látszanak.
+jóváhagyás feltételeként nyitva maradó feladatok — kapunként látszanak. A
+kép a kiadas kapuit mutatja; a G1-nél a kihagyott dokumentum indoklása is
+ott áll (kimondott saját-fejlesztésű tesztprojekt).
 
-![A voice kapui G0-tól G5-ig: mind jóváhagyva, a fenntartások számával](kepek/04-kapuk.png)
+![A kiadas kapui G0-tól G5-ig: mind jóváhagyva, a fenntartások számával](kepek/04-kapuk.png)
 
-### 4. Mi a következő lépés?
+### 5. Mi a következő lépés?
 
 A futó kapu lépései sorrendben: ki végzi (az ügynök, a felület vagy az
 ember), mit kell tenni, és pontosan mit kell beírni vagy megnyomni. A kép a
-voice-nak azt az állapotát mutatja, amikor a G4 már jóváhagyott volt, és a
-záró G5 következett.
+kiadas G4 kapujának régebbi állapotát mutatja (2026-10-29, a bírálat első
+köre után): a bírálat lefutott, az emberi döntés még várat magára.
 
-![A következő lépés panel a G5 kapu lépéseivel](kepek/05-kovetkezo-lepes.png)
+![A következő lépés panel a G4 kapu lépéseivel](kepek/05-kovetkezo-lepes.png)
 
-### 5. Kérdések, amelyek önmagukban érthetők
+### 6. Kérdések, amelyek önmagukban érthetők
 
 Az ügynök menet közben nem kérdezget, hanem összegyűjti a kérdéseket, és a
 kapunál egyben teszi fel őket. Minden kérdés ugyanazt a szerkezetet követi:
 mire vonatkozik, mit javasol az ügynök, mi az ára, és mi a másik lehetőség.
 A felület feloldja, mire hivatkozik a kérdés, és a válasz ugyanitt adható
 meg — ha valami nem érthető, a „Visszakérdezek” gombbal az ügynök kifejti.
-A kép ugyanabból az állapotból készült, mint az előző.
+A kép ugyanabból az állapotból készült, mint az előző (a hét nyitott
+kérdésből az első ötöt mutatja).
 
 ![A nyitott kérdések panelje: javaslat, ár, alternatíva, hivatkozások és a válasz mezője](kepek/06-kerdesek.png)
 
-### 6. Backlog és nyomon követhetőség
+### 7. Backlog és nyomon követhetőség
 
 A backlog fában: epic, story, spike, chore, mindegyiknél az állapot, a
 becslés, az elfogadási kritériumok és a tesztek száma, és a GitHub-issue
-száma.
+száma. Az elejtett („dropped”) elemek külön jelölést kapnak, nem tűnnek el.
 
-![A backlog összesítője és fája](kepek/07-backlog.png)
+![A kiadas backlogjának összesítője és fája](kepek/07-backlog.png)
 
-### 7. Mérés
+### 8. Mérés
 
 A mérőszámokat a gép számolja a projekt adataiból — a kapuk jóváhagyási
 aránya, a bírálati körök, a nyitott kérdések, az emberi döntések száma —, és
 mindegyik kimondja, mire épül és mit nem mér.
 
-![A mérési pillanatkép a voice projektről](kepek/08-meresek.png)
+![A mérési pillanatkép a kiadas projektről](kepek/08-meresek.png)
 
 ## Példaprojekt: voice
 
@@ -120,6 +141,14 @@ fenntartásokkal; a záró kapu első futását a bíráló egy elavult szám mi
 visszaküldte, az új futás egy kör után ment át. A teljes esettanulmány a
 számokkal, a tanulságokkal és a korlátokkal:
 [esettanulmany-voice.md](esettanulmany-voice.md).
+
+Összehasonlításul a voice kapui és mérési pillanatképe a konzol
+2026-10-20-i állapotában (a voice-nál nagyobb a backlog, és a G2–G5 több
+fenntartással zárult, mint a kiadas kapui):
+
+![A voice kapui G0-tól G5-ig, a konzol 2026-10-20-i állapotában](kepek/voice-04-kapuk.png)
+
+![A mérési pillanatkép a voice projektről, 2026-10-20](kepek/voice-08-meresek.png)
 
 ## Második példaprojekt: kiadas
 
